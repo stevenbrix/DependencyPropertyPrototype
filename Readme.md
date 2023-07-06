@@ -44,4 +44,4 @@ let obj = MyDO()
 obj.Style = Style(targetType.MyOtherDO) { ... }
 ```
 
-Is there a way to validate this?
+The runtime will fail when you do this, but it would be nice to have compile-time validation. Is there a way to validate this?
