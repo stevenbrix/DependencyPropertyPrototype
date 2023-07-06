@@ -8,6 +8,31 @@ See the code in `Sources` dir for the API and explanation.
 
 See the Tests for use cases
 
+## Usage
+
+### Change notifications
+
+```
+let myDO = MyDO()
+myDO.myProperty = "hello"
+myDO.$myProperty.sink {
+    XCTAssertEqual($0, "hello")
+    XCTAssertEqual($1, "world")
+}
+
+myDO.myProperty = "world"
+```
+
+### Style type enforcements
+
+```
+let style = Style(targetType: MyDO.self) {
+    Setter(.myProperty, "hi")
+    Setter(.myIntProperty, 2)             
+}
+
+```
+
 ## Open Questions
 
 The `Style` class has a type-erased base class `StyleBase` which is what the API would expose, however this type wouldn't be constructible. 
