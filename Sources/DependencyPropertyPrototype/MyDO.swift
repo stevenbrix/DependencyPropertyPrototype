@@ -23,17 +23,6 @@ public class MyDO: DependencyObject {
 
     @DependencyProperty var myProperty: String
     @DependencyProperty var myIntProperty: Int
-
-    override var style: Style<MyDO>? { 
-        get 
-        { 
-            return nil 
-        } 
-        set { 
-            print("set style") 
-        } 
-    }
-
 }
 
 fileprivate extension MyDO {
